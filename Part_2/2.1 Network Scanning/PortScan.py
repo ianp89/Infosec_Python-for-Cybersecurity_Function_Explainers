@@ -13,7 +13,6 @@ def SynScan(host):
 # A SYN scan sends a SYN packet hoping for an SYN-ACK(knowledge) packet to be returned from the target system.
 # The scan does not complete the "handshake" with the final acknowledgement, thus leaving an open connection request.
 # A well-designed detection system will catch this open state, but many will not; therefore this is a "quiet" scan.
-    
     ans,unans = sr(IP(dst=host)/TCP(dport=ports,flags="S"),timeout=2,verbose=0)
     # The sr() function is built into scapy. It "sends and receives" (hence 'sr')
     # Here, a TCP packet wrapped with an IP address is created.  
@@ -21,7 +20,6 @@ def SynScan(host):
     # It only listens briefly (timeout), and returns the minimum output to the variables 'ans' and 'unans' (verbose=0).
     # You can also set an 'sport' variable to a specific value before dport to make Wireshark filtering easier.
     # ans receives all SYN-ACK responses automatically from the 'sr' function.
-    
     print("Open ports at %s:" % host)
     for (s,r,) in ans:
         if s.haslayer(TCP) and r.haslayer(TCP):
@@ -34,12 +32,11 @@ def DNSScan(host):
     ans,unans = sr(IP(dst=host)/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="google.com")),timeout=2,verbose=0)
     # Similarly to the previous function, but this one tests only for DNS responses on DNS's default port. 
     # There is less concern of alarm bells going off in this case as (at least public) DNS servers are built to answer such requests.
-    
+    # If it answers, the print statement below will tell you it is a DNS server.
     if ans:
         print("DNS Server at %s"%host)
     
 host = "8.8.8.8"
 SynScan(host)
 DNSScan(host)
-
 # The example here runs both functions testing one of Google's well-known public DNS servers.
