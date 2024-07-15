@@ -12,3 +12,6 @@ cd python-for-cybersecurity
 # Install requirements
 python -m pip install -r requirements.txt
 ```
+
+Note that ianp89 has changed directory names and edited cloned scripts by adding explanatory #comments.
+Happy Learning!
