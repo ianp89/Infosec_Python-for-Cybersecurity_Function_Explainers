@@ -1,3 +1,6 @@
+# This file enumerates publicly facing systems of a specified domain name by providing their name, type, and IP addresses (where applicable).
+# It makes sense to start at the bottom and work your way up in this case (as the instructor of the course and author of the script did).
+
 import dns
 import dns.resolver
 import socket
@@ -37,4 +40,7 @@ d = "subdomains.txt"
 dictionary = []
 with open(d,"r") as f:
     dictionary = f.read().splitlines()
+    # The previous four lines use built-in Python functionality to create a list of Google subdomains
+    # by opening a file within the current directory ('subdomain.txt') that contains common subdomains for any given IT infrastructure
 SubdomainSearch(domain,dictionary,True)
+# Example here calls "Subdomain Search" on Google to enumerate publicly-facing, but otherwise publicly-unknown systems.
