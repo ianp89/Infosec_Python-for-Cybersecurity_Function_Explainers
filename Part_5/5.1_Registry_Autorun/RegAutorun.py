@@ -3,12 +3,14 @@ import os, shutil, winreg
 filedir = os.path.join(os.getcwd(),"Temp")
 filename = "benign.exe"
 filepath = os.path.join(filedir,filename)
+# These three lines create a "Temp(orary)" folder in the PWD with a file inside named "benign.exe."
 
 if os.path.isfile(filepath):
     os.remove(filepath)
+# The script checks for the file's existence and deletes it if so.
 
-# Use BuildExe to create malicious executable
 os.system("python BuildExe.py")
+# The script calls a Python to create a "wrapped" malicious file (explained in ).
 
 # Move malicious executable to desired directory
 shutil.move(filename,filedir)
