@@ -29,12 +29,15 @@ def TelnetLogin(host,port,username,password):
         print("Login failed %s %s" % (username,password))
 
 host = "127.0.0.1"
-port = 2200
+# The test case here is with one's local host/PC
 with open("defaults.txt","r") as f:
+# Python's text reading capabilities are used to open a file in this directory with common account/device defaults.
+# Common defaults are available online with a simple Google search if using this script in a real-life scenario.
     for line in f:
         vals = line.split()
         username = vals[0].strip()
         password = vals[1].strip()
+        # This loop iterates 
         SSHLogin(host,port,username,password)
         TelnetLogin(host,port,username,password)
         
