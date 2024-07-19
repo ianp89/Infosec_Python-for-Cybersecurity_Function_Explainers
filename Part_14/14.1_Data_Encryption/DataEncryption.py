@@ -1,4 +1,4 @@
-# This script encrypts data; could be used in a ransomware attack.
+# This script encrypts data and only decrypts with a provided password; could be used in a ransomware attack.
 
 from pathlib import Path
 # pathlib is one of Python's libraries for filesystem manipulation.
