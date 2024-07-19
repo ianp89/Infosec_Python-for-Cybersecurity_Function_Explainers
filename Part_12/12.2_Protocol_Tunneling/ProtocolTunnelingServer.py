@@ -17,9 +17,11 @@ class C2Server(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     hostname = ""
     port = 8443
+    # This info matches the client-side script.
     webServer = HTTPServer((hostname,port),C2Server)
     try:
         webServer.serve_forever()
     except KeyboardInterrupt:
         pass
     webServer.server_close()
+    # Keeps the web server online until manually interrupted.
