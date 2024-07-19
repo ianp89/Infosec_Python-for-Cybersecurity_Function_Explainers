@@ -1,3 +1,6 @@
+# This script acts as a DNS server, but only accepts requests on a specified channel.
+# It takes encoded messages in the requests and sends back receipts in hidden form, completing the DNS tunnel data exfil operation.
+
 from scapy.all import *
 import socket
 from base64 import b64decode
