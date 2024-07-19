@@ -1,4 +1,5 @@
-# This script depends on scripts from Module 12.2.
+# This script was tested on scripts from Module 12.2.
+# It decodes base64-encoded data from HTTP and raw data packets in order to detect exfiltration efforts using process tunneling.
 
 from scapy.all import *
 from scapy.layers.http import *
