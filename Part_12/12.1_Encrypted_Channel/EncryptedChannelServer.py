@@ -3,12 +3,12 @@ from Crypto.Cipher import AES
 
 host = "127.0.0.1"
 port = 1337
-
 key = b"Sixteen byte key"
 
 def decrypt(data,key,iv):
     cipher = AES.new(key,AES.MODE_CBC,iv)
     return cipher.decrypt(data)
+# See client-side script for explanation up to this point.
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as s:
     s.bind((host,port))
