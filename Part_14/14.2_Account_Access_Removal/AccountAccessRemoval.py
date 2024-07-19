@@ -1,8 +1,6 @@
 # This script searches a system for target usernames, and changes the password for that name, denying access to the user.
 # Needs an Admin cmd-prompt!
 
-to deny access to a system 
-
 import platform
 # platform is Python's built-in library to extract information about the system-in-use's platform (e.g. device, OS, Py version, etc.)
 
