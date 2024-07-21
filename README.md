@@ -13,5 +13,5 @@ cd python-for-cybersecurity
 python -m pip install -r requirements.txt
 ```
 
-Note that ianp89 has edited cloned scripts by adding explanatory #comments.
+ianp89 has edited cloned scripts by adding explanatory #comments.
 Happy Learning!
